@@ -6,7 +6,7 @@ const config = require('./config');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.jsx',
     vendor: ['react', 'react-dom'],
   },
   output: {
@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.(jsx|js)$/,
-        loader: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.(less|css)$/,
